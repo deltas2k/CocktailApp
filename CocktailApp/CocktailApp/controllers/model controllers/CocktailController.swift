@@ -16,7 +16,7 @@ class CocktailController {
         let urlComponent = baseURL?.appendingPathComponent("search.php")
         guard let url = urlComponent else {return }
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        let queryCocktail = URLQueryItem(name: "s", value: searchTerm)
+        let queryCocktail = URLQueryItem(name: "s", value: searchTerm.lowercased())
         components?.queryItems = [queryCocktail]
         
         guard let finalURL = components?.url else {return}
